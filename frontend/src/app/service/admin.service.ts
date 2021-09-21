@@ -10,13 +10,18 @@ export class AdminService {
 
   constructor(public http: HttpClient) { }
 
-  adminSignIn(userInfo: any): Observable<any> {
-    return this.http.post("http://localhost:8080/api/admin/adminSignIn", userInfo,
-      { responseType: 'text' });
-  }
+  // adminSignIn(userInfo: any): Observable<any> {
+  //   return this.http.post("http://localhost:8080/api/admin/adminSignIn", userInfo,
+  //     { responseType: 'text' });
+  // }
 
   userSignUp(userInfo: any): Observable<any> {
-    return this.http.post("http://localhost:8080/api/user/signUp", userInfo,
+    return this.http.post("http://localhost:8080/api/user/signUp", userInfo);
+  }
+
+  signin(userInfo: any): Observable<any> {
+    console.log(userInfo)
+    return this.http.post("http://localhost:8080/api/user/signin", userInfo,
       { responseType: 'text' });
   }
 }
