@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminpanelComponent } from './component/adminpanel/adminpanel.component';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    AdminpanelComponent
+    AdminpanelComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

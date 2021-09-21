@@ -11,9 +11,9 @@ let accountSchema = mongoose.Schema({
     phone: { type: Number },
     address: { type: String },
     type: { type: String },
-    lock: { type: Boolean }
+    //lock: { type: Boolean }
 });
 
-let usersModel = mongoose.model("Account", accountSchema);
+let usersModel = mongoose.model("User", accountSchema);
 
 module.exports = usersModel;
