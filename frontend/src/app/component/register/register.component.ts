@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   })
 
   constructor(public creatAccount: AdminService, public router: Router) { }
+  message = "";
   msg = "";
 
   ngOnInit(): void {
@@ -27,17 +28,13 @@ export class RegisterComponent implements OnInit {
 
   accountCreate() {
     let userInfo = this.signUpRef.value;
-
-    // this.creatAccount.userSignUp(userInfo).
-    //   subscribe(result => this.msg = result, err => console.log(err))
-
-    // this.signUpRef.reset();
-    this.creatAccount.userSignUp(userInfo)
-    localStorage.setItem('loggedUser', userInfo.fname);
-    this.router.navigate(['adminPanel'], { queryParams: { id: userInfo.fname } });   // appended name through path
-    // } else {
+    this.creatAccount.userSignUp(userInfo).
+      subscribe((result) => {
+        alert(result.message)
+      }, (err) => console.log(err))
+    localStorage.setItem('loggedUser', userInfo.email);
+    this.router.navigate(['login'], { queryParams: { id: userInfo.email } });   // appended name through path
     this.msg = "InValid username or password";
-    //}
     this.signUpRef.reset();
   }
 }

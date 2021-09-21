@@ -34,7 +34,7 @@ mongoose.connect(url).then(res => console.log("Database connected")).catch(error
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRouter);
-app.use("/api/admin", usersRouter);
+//app.use("/api/admin", usersRouter);
 
 app.use("/api/user", usersRouter);
 

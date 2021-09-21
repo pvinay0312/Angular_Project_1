@@ -13,21 +13,40 @@ export class AdminComponent implements OnInit {
     email: new FormControl("", Validators.required),
     password: new FormControl("", Validators.required)
   })
-  msg: String = "";
-  constructor(public adminService: AdminService, public router: Router) { }
 
+  constructor(public adminService: AdminService, public router: Router) { }
+  msg: String = "";
   ngOnInit(): void {
   }
 
-  checkAdmin() {
+  // checkAdmin() {
+  //   let userInfo = this.signInRef.value;
+  //   this.adminService.adminSignIn(userInfo).
+  //     subscribe(result => {
+  //       if (userInfo.email == "admin@email.com" && userInfo.password == "123") {
+  //         localStorage.setItem('loggedUser', userInfo.email);
+  //         this.router.navigate(['adminPanel'], { queryParams: { id: userInfo.email } });   // appended name through path
+  //       } else {
+  //         this.msg = "InValid username or password";
+  //       }
+  //       this.signInRef.reset();
+  //     }, err => console.log(err))
+  // }
+
+  checkUser() {
     let userInfo = this.signInRef.value;
-    this.adminService.adminSignIn(userInfo);
-    if (userInfo.email == "admin@email.com" && userInfo.password == "123") {
-      localStorage.setItem('loggedUser', userInfo.email);
-      this.router.navigate(['adminPanel'], { queryParams: { id: userInfo.email } });   // appended name through path
-    } else {
-      this.msg = "InValid username or password";
-    }
+    this.adminService.signin(userInfo).
+      subscribe(result => {
+        if (result == "Success") {
+          console.log(result)
+          localStorage.setItem('loggedUser', userInfo.email);
+          this.router.navigate(['adminPanel'], userInfo.email);   // appended name through path
+        } else {
+          this.msg = result;
+        }
+        //this.signInRef.reset();
+      },
+        err => console.log(err));
     this.signInRef.reset();
   }
 

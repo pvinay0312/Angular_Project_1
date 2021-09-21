@@ -3,10 +3,10 @@
         <div class="card bg-dark">
             <div class="card-body">
                 <h4 class="card-title" style="text-align: center;">Log In Page</h4>
-                <form class="form-inline" [formGroup]="signInRef" (ngSubmit)="checkAdmin()">
-                    <input class="form-control mb-2 mr-sm-2" type="text" id="email" formControlName="email"
+                <form class="form-inline" [formGroup]="signInRef" (ngSubmit)="checkUser()">
+                    <input class="form-control mb-2 mr-sm-2" type="text" id="emailId" formControlName="email"
                         placeholder="Email" /><br />
-                    <input class="form-control mb-2 mr-sm-2" type="password" id="password" formControlName="password"
+                    <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password"
                         placeholder="Password" /><br />
                     <div style="text-align: center;">
                         <button class="btn btn-info" style="margin-inline: 10px;" type="submit"
@@ -17,6 +17,7 @@
                         <br>
                     </div>
                 </form>
+                <a routerLink="/register" class="btn btn-info">Sign Up</a>
             </div>
         </div>
     </div>
