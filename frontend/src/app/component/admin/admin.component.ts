@@ -10,8 +10,8 @@ import { AdminService } from 'src/app/service/admin.service';
 })
 export class AdminComponent implements OnInit {
   signInRef = new FormGroup({
-    email: new FormControl("admin@email.com", Validators.required),
-    password: new FormControl("123", Validators.required)
+    email: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required)
   })
   msg: String = "";
   constructor(public adminService: AdminService, public router: Router) { }
@@ -21,17 +21,14 @@ export class AdminComponent implements OnInit {
 
   checkAdmin() {
     let userInfo = this.signInRef.value;
-    this.adminService.adminSignIn(userInfo).
-      subscribe(result => {
-        if (result == "Success") {
-          console.log(result)
-          this.router.navigate(['adminPanel'], { queryParams: { id: userInfo.email } });
-
-        } else {
-          this.msg = result;
-        }
-      }
-        , err => console.log(err))
+    this.adminService.adminSignIn(userInfo);
+    if (userInfo.email == "admin@email.com" && userInfo.password == "123") {
+      localStorage.setItem('loggedUser', userInfo.email);
+      this.router.navigate(['adminPanel'], { queryParams: { id: userInfo.email } });   // appended name through path
+    } else {
+      this.msg = "InValid username or password";
+    }
+    this.signInRef.reset();
   }
 
 }

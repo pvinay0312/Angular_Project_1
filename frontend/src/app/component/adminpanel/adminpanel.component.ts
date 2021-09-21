@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminpanel.component.css']
 })
 export class AdminpanelComponent implements OnInit {
-
+  userDisplayName: String | null = '';
   constructor() { }
 
   ngOnInit(): void {
+    this.userDisplayName = localStorage.getItem('loggedUser');
   }
 
 }
