@@ -2,7 +2,7 @@
     <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
         <div class="card bg-dark">
             <div class="card-body">
-                <h4 class="card-title" style="text-align: center;">Admin Log In Page</h4>
+                <h4 class="card-title" style="text-align: center;">User Log In Page</h4>
                 <form class="form-inline" [formGroup]="signInRef" (ngSubmit)="checkUser()">
                     <input class="form-control mb-2 mr-sm-2" type="text" id="emailId" formControlName="email"
                         placeholder="Email" /><br />
@@ -17,8 +17,8 @@
                         <br>
                     </div>
                 </form>
+                <a routerLink="/register" class="btn btn-info">Sign Up</a> |
                 <a routerLink="" class="btn btn-info">Home Page</a>
-                <!-- <a routerLink="/register" class="btn btn-info">Sign Up</a> -->
             </div>
         </div>
     </div>

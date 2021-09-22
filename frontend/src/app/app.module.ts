@@ -9,13 +9,23 @@ import { AdminComponent } from './component/admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminpanelComponent } from './component/adminpanel/adminpanel.component';
 import { RegisterComponent } from './component/register/register.component';
+import { HomeComponent } from './component/home/home.component';
+import { UserSignInComponent } from './component/user-sign-in/user-sign-in.component';
+import { UserpanelComponent } from './component/userpanel/userpanel.component';
+import { CommonModule } from '@angular/common';
+import { AddproductComponent } from './component/addproduct/addproduct.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     AdminpanelComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    UserSignInComponent,
+    UserpanelComponent,
+    AddproductComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +33,8 @@ import { RegisterComponent } from './component/register/register.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
