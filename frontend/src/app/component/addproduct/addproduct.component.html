@@ -1,1 +1,17 @@
-<p>addproduct works!</p>
+<div class="justify-content-center">
+    <h2>Add Products</h2>
+    <hr />
+    <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+        <label for="name">Product name:</label>
+        <input type="text" id="name" formControlName="name" />
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" />
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" formControlName="quantity" />
+        <label for="image">Image Link:</label>
+        <input type="text" id="image" formControlName="image" />
+        <button type="submit">Submit</button>
+    </form>
+    <hr />
+    <a routerLink="/adminPanel">Admin Page</a>
+</div>

@@ -3,6 +3,7 @@ let mongoose = require("mongoose")
 let cors = require("cors")
 let bodyParser = require("body-parser")
 var usersRouter = require("./routes/users");
+var productRouter = require("./routes/product");
 
 const { request } = require("express");
 
@@ -37,6 +38,8 @@ mongoose.connect(url).then(res => console.log("Database connected")).catch(error
 //app.use("/api/admin", usersRouter);
 
 app.use("/api/user", usersRouter);
+
+app.use("/api/product", productRouter);
 
 // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
