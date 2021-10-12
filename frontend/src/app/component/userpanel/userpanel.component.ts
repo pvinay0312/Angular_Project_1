@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-userpanel',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserpanelComponent implements OnInit {
 
+  product: any;
   userDisplayName: String | null = '';
-  constructor() { }
+  constructor(private allProduct: ProductService) { }
 
   ngOnInit(): void {
     this.userDisplayName = localStorage.getItem('loggedUser');
+    this.allProduct.getProduct(this.userDisplayName).subscribe((result) => {
 
+    })
   }
 
 }
