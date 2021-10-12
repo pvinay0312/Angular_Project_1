@@ -13,4 +13,8 @@ export class ProductService {
     console.log(product)
     return this.http.post("http://localhost:8080/api/product/addProduct", product);
   }
+
+  getProduct(product: any): Observable<any> {
+    return this.http.post("http://localhost:8080/api/product/getProduct", product)
+  }
 }

@@ -11,5 +11,15 @@ let addProduct = (request, response) => {
     })
 }
 
+let getProduct = (request, response) => {
+    productModel.find({}, (err, data) => {
+        if (!err) {
+            response.json(data);
+        }
+        else {
+            response.json(err);
+        }
+    })
+}
 
-module.exports = { addProduct }
+module.exports = { addProduct, getProduct }
