@@ -14,6 +14,9 @@ import { UserSignInComponent } from './component/user-sign-in/user-sign-in.compo
 import { UserpanelComponent } from './component/userpanel/userpanel.component';
 import { CommonModule } from '@angular/common';
 import { AddproductComponent } from './component/addproduct/addproduct.component';
+import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { ViewproductComponent } from './viewproduct/viewproduct.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { AddproductComponent } from './component/addproduct/addproduct.component
     HomeComponent,
     UserSignInComponent,
     UserpanelComponent,
-    AddproductComponent
+    AddproductComponent,
+    DeleteproductComponent,
+    UpdateproductComponent,
+    ViewproductComponent
   ],
   imports: [
     BrowserModule,
