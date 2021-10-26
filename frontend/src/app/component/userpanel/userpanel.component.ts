@@ -8,15 +8,25 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class UserpanelComponent implements OnInit {
 
-  product: any;
+  product = [{
+    name: "",
+    price: "",
+    quantity: "",
+    image: ""
+  }
+  ];
   userDisplayName: String | null = '';
   constructor(private allProduct: ProductService) { }
 
   ngOnInit(): void {
     this.userDisplayName = localStorage.getItem('loggedUser');
     this.allProduct.getProduct(this.userDisplayName).subscribe((result) => {
-
+      this.product = result
     })
+  }
+
+  addToCart(product: any) {
+
   }
 
 }

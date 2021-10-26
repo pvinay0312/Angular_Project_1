@@ -15,6 +15,6 @@ export class ProductService {
   }
 
   getProduct(product: any): Observable<any> {
-    return this.http.post("http://localhost:8080/api/product/getProduct", product)
+    return this.http.get("http://localhost:8080/api/product/getProduct", product)
   }
 }
