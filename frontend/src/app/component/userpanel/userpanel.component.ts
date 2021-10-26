@@ -11,7 +11,7 @@ export class UserpanelComponent implements OnInit {
   product = [{
     name: "",
     price: "",
-    quantity: "",
+    // quantity: "",
     image: ""
   }
   ];

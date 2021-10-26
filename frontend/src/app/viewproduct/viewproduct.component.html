@@ -1,1 +1,32 @@
-<p>viewproduct works!</p>
+<div>
+    <table class="table innerbox table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <!-- <th>Image</th> -->
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let products of product">
+                <td>{{products.name}}</td>
+                <td>{{products.price}}</td>
+                <td>{{products.quantity}}</td>
+                <!-- <td>{{products.image}}</td> -->
+                <td>
+                    <button class="btn btn-secondary rounded-pill" routerLink="/update">
+                        Update Product
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-secondary rounded-pill">
+                        Delete Product
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
