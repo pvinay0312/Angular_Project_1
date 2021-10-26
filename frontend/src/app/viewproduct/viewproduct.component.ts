@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-viewproduct',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewproduct.component.css']
 })
 export class ViewproductComponent implements OnInit {
-
-  constructor() { }
+  product = [{
+    name: "",
+    price: "",
+    quantity: "",
+    image: ""
+  }
+  ];
+  userDisplayName: String | null = '';
+  constructor(private allProduct: ProductService) { }
 
   ngOnInit(): void {
+    this.allProduct.getProduct(this.userDisplayName).subscribe((result) => {
+      this.product = result
+    })
   }
-
 }
+
+

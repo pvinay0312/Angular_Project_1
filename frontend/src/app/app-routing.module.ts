@@ -7,6 +7,9 @@ import { HomeComponent } from './component/home/home.component';
 import { RegisterComponent } from './component/register/register.component';
 import { UserSignInComponent } from './component/user-sign-in/user-sign-in.component';
 import { UserpanelComponent } from './component/userpanel/userpanel.component';
+import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { ViewproductComponent } from './viewproduct/viewproduct.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "userSignIn", component: UserSignInComponent },
   { path: "userPanel", component: UserpanelComponent },
-  { path: "add", component: AddproductComponent }
+  { path: "add", component: AddproductComponent },
+  { path: "update", component: UpdateproductComponent },
+  { path: "delete", component: DeleteproductComponent },
+  { path: "view", component: ViewproductComponent }
 ];
 
 @NgModule({
